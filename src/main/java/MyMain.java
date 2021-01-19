@@ -19,27 +19,29 @@ public class MyMain {
         // YOUR CODE HERE 
         double sum = 0;
         double ct = 0;
+        int time = 0;
         for (int row = 0; row < mat.length;row++){
             for (int cul = 0; cul < mat[0].length;cul++){
                 ct+=1;
             }
         }
-        double[] array = new double[(int)ct+1];
+        double[] array = new double[(int)ct];
         for (int row = 0; row < mat.length;row++){
             for (int cul = 0; cul < mat[0].length;cul++){
-                array[(int)ct] = mat[row][cul];
+                array[time] = mat[row][cul];
+                time ++;
             }
         }
-        if (ct%2 == 1){
-            return (double)(array[(int)ct/2] + array[(int)ct/2-1])/2.0;
-        }
+        System.out.print(array.length);
         if (ct%2 == 0){
+            return (double)(array[(int)ct/2] + array[(int)ct/2-1])/2;
+        }
+        if (ct%2 == 1){
             return (double)array[(int)ct/2];
         }
         else {
             return 0;
         }
-        
     }
     
 
